@@ -22,7 +22,9 @@ export default function Navbar({ activeTab, setActiveTab, theme, toggleTheme, se
             transition={{ duration: 0.4 }}
         >
             <div className="container mx-auto px-6 py-4 flex items-center justify-between md:space-x-6">
-                <h1 className="text-2xl font-bold text-primary dark:text-secondary">Linkspire</h1>
+                <a href="/" className="text-2xl font-bold text-primary dark:text-secondary">
+                    Linkspire
+                </a>
 
                 {/* Mobile Menu Toggle */}
                 <div className="md:hidden flex items-center space-x-2">
@@ -54,12 +56,6 @@ export default function Navbar({ activeTab, setActiveTab, theme, toggleTheme, se
                             )}
                         </button>
                     ))}
-                    {/* <button
-                        onClick={() => setView('editProfile')}
-                        className="px-4 py-2 bg-indigo-600 text-white rounded-lg"
-                    >
-                        Edit Profile
-                    </button> */}
                 </nav>
 
                 {/* Mobile Menu */}
@@ -84,15 +80,6 @@ export default function Navbar({ activeTab, setActiveTab, theme, toggleTheme, se
                                     {tab}
                                 </button>
                             ))}
-                            {/* <button
-                                onClick={() => {
-                                    setView('editProfile');
-                                    setIsMenuOpen(false);
-                                }}
-                                className="block w-full text-left px-6 py-2 text-lg text-indigo-600 dark:text-indigo-400"
-                            >
-                                Edit Profile
-                            </button> */}
                             <button
                                 onClick={toggleTheme}
                                 className="mt-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition w-full text-center"
