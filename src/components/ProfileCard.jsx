@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function ProfileCard({ profile, onConnect, setView, setSelectedProfileId }) {
@@ -7,8 +7,8 @@ export default function ProfileCard({ profile, onConnect, setView, setSelectedPr
 
   const handleDoubleTap = (e) => {
     const now = Date.now();
-    const TAP_THRESHOLD = 250; // Double-tap threshold in ms
-    const COORD_THRESHOLD = 30; // Max distance between taps in px
+    const TAP_THRESHOLD = 250;
+    const COORD_THRESHOLD = 30;
 
     if (lastTap) {
       const timeDiff = now - lastTap.time;
@@ -18,7 +18,7 @@ export default function ProfileCard({ profile, onConnect, setView, setSelectedPr
 
       if (timeDiff < TAP_THRESHOLD && coordDiff < COORD_THRESHOLD) {
         setIsLiked(!isLiked);
-        e.stopPropagation(); // Prevent triggering onConnect
+        e.stopPropagation();
       }
     }
 
@@ -27,19 +27,18 @@ export default function ProfileCard({ profile, onConnect, setView, setSelectedPr
 
   return (
     <motion.div
-      onClick={() => { 
+      onClick={() => {
         onConnect(profile);
         setSelectedProfileId(profile.id);
-        setView('profile');
+        // setView('profile'); // Removed to avoid breaking UI
         setIsLiked(false);
-       }}
+      }}
       onDoubleClick={handleDoubleTap}
       className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center cursor-pointer relative"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 400, damping: 10 }}
     >
-      {/* Ripple Effect */}
       {isLiked && (
         <motion.div
           className="absolute inset-0 rounded-xl pointer-events-none"
@@ -52,12 +51,8 @@ export default function ProfileCard({ profile, onConnect, setView, setSelectedPr
           transition={{ duration: 1 }}
         />
       )}
-
       <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-2xl mb-4">
-        {profile.name
-          .split(' ')
-          .map(n => n[0])
-          .join('')}
+        {profile.name.split(' ').map(n => n[0]).join('')}
       </div>
       <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">{profile.name}</h3>
       <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{profile.bio}</p>
@@ -71,8 +66,6 @@ export default function ProfileCard({ profile, onConnect, setView, setSelectedPr
           </span>
         ))}
       </div>
-
-      {/* Heart Icon for Double Tap */}
       {isLiked && (
         <motion.div
           className="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-red-500 text-xl"

@@ -1,26 +1,71 @@
 import { motion } from 'framer-motion';
 import Particles from 'react-particles';
-import { loadFull } from 'tsparticles';
+import { loadSlim } from 'tsparticles-slim'; // Use loadSlim instead of loadFull
+import Logo from './Logo';
 
+export default function HeroSection({ setView }) {
+  const particlesInit = async (engine) => {
+    await loadSlim(engine); // Initialize tsparticles-slim
+  };
 
-export default function HeroSection({setView}) {
-  const particlesInit = async (main) => await loadFull(main);
   return (
-    <section className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+    <section className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-56">
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
           particles: {
-            number: { value: 50 },
-            size: { value: 3 },
-            move: { enable: true, speed: 1 },
-            opacity: { value: 0.5 },
+            number: {
+              value: 50,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            size: {
+              value: 3,
+              random: true,
+            },
+            move: {
+              enable: true,
+              speed: 1,
+              direction: 'none',
+              random: false,
+              straight: false,
+              out_mode: 'out',
+            },
+            opacity: {
+              value: 0.5,
+              random: true,
+            },
           },
+          interactivity: {
+            events: {
+              onhover: {
+                enable: true,
+                mode: 'repulse',
+              },
+              onclick: {
+                enable: true,
+                mode: 'push',
+              },
+            },
+            modes: {
+              repulse: {
+                distance: 100,
+                duration: 0.4,
+              },
+              push: {
+                quantity: 4,
+              },
+            },
+          },
+          retina_detect: true,
         }}
         className="absolute inset-0"
       />
       <div className="relative container mx-auto px-6 text-center">
+        <Logo />
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-4"
           initial={{ opacity: 0, y: -50 }}
@@ -43,7 +88,7 @@ export default function HeroSection({setView}) {
             className="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition"
             whileHover={{ scale: 1.05 }}
           >
-            Create Profile
+            Create Job
           </motion.button>
           <motion.button
             onClick={() => setView('dashboard')}

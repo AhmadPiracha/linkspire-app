@@ -140,7 +140,6 @@ export const profiles = [
   },
 ];
 
-
 export const jobs = [
   {
     id: 1,
@@ -153,6 +152,7 @@ export const jobs = [
     salary: '$100,000 - $120,000',
     benefits: ['Health insurance', '401k', 'Paid time off'],
     companyWebsite: 'https://techco.com',
+    createdAt: '2025-04-10T00:00:00Z',
   },
   {
     id: 2,
@@ -165,6 +165,7 @@ export const jobs = [
     salary: '$90,000 - $110,000',
     benefits: ['Stock options', 'Health insurance', 'Paid sick leave'],
     companyWebsite: 'https://websolutions.com',
+    createdAt: '2025-04-09T00:00:00Z',
   },
   {
     id: 3,
@@ -177,6 +178,7 @@ export const jobs = [
     salary: '$60,000 - $80,000',
     benefits: ['Flexible hours', 'Health insurance'],
     companyWebsite: 'https://designpro.com',
+    createdAt: '2025-04-08T00:00:00Z',
   },
   {
     id: 4,
@@ -189,6 +191,7 @@ export const jobs = [
     salary: '$110,000 - $130,000',
     benefits: ['Health insurance', '401k', 'Relocation assistance'],
     companyWebsite: 'https://datax.com',
+    createdAt: '2025-04-07T00:00:00Z',
   },
   {
     id: 5,
@@ -201,6 +204,7 @@ export const jobs = [
     salary: '$120,000 - $140,000',
     benefits: ['Health insurance', '401k', 'Paid time off'],
     companyWebsite: 'https://cloudworks.com',
+    createdAt: '2025-04-06T00:00:00Z',
   },
   {
     id: 6,
@@ -213,6 +217,7 @@ export const jobs = [
     salary: '$75/hour',
     benefits: ['Flexible schedule', 'Paid vacation'],
     companyWebsite: 'https://webtech.com',
+    createdAt: '2025-04-05T00:00:00Z',
   },
   {
     id: 7,
@@ -225,6 +230,7 @@ export const jobs = [
     salary: '$95,000 - $115,000',
     benefits: ['Health insurance', '401k', 'Remote work'],
     companyWebsite: 'https://technest.com',
+    createdAt: '2025-04-04T00:00:00Z',
   },
   {
     id: 8,
@@ -237,6 +243,7 @@ export const jobs = [
     salary: '$120,000 - $150,000',
     benefits: ['Stock options', 'Health insurance'],
     companyWebsite: 'https://productify.com',
+    createdAt: '2025-04-03T00:00:00Z',
   },
   {
     id: 9,
@@ -249,6 +256,7 @@ export const jobs = [
     salary: '$95,000 - $115,000',
     benefits: ['Health insurance', 'Paid time off'],
     companyWebsite: 'https://securenet.com',
+    createdAt: '2025-04-02T00:00:00Z',
   },
   {
     id: 10,
@@ -261,5 +269,6 @@ export const jobs = [
     salary: '$100,000 - $120,000',
     benefits: ['Health insurance', '401k', 'Remote work'],
     companyWebsite: 'https://appworks.com',
+    createdAt: '2025-04-01T00:00:00Z',
   },
 ];
